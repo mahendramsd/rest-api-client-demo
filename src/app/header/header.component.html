@@ -1,0 +1,14 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <div><a href="" class="navbar-brand">REST-API-CLIENT</a></div>
+  
+  <ul class="navbar-nav">
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">Upload Data</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/parent" class="nav-link">Parent</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
+  </ul>
+  </nav>
+  
+  </header>

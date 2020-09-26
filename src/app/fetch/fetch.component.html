@@ -1,0 +1,20 @@
+<div class="main">
+  <strong>
+    <h2>Upload Parent data and child data </h2>
+  </strong>
+  <hr/>
+
+  <div class="form">
+    <div class="form-group">
+      <label for="file">Choose Parent File </label>
+      <input type="file" id="file" (change)="handleFileParent($event.target.files)">
+      <button [disabled]="isParentData" class="btn btn-info" (click)="uploadParentData()">Upload Parent Data</button>
+    </div>
+    
+    <div class="form-group">
+      <label for="file">Choose Child File </label>
+      <input type="file" id="file" (change)="handleFileChild($event.target.files)">
+      <button [disabled]="isChildData" class="btn btn-info" (click)="uploadChildData()">Upload Child Data</button>
+    </div>
+  </div>
+</div>

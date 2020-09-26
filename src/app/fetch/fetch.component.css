@@ -1,0 +1,19 @@
+.main {
+    text-align: center;
+}
+
+label {
+    padding-right: 10px;
+}
+
+.form {
+    border: solid 1px black;
+    width: 50%;
+    height: 250px;
+    margin-left: 25%;
+    padding-top: 15px;
+}
+
+button {
+    width: 160px;
+}

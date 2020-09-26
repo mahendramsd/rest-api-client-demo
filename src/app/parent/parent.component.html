@@ -1,0 +1,46 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h2>Parents Details</h2>
+
+    </div>
+
+    <div class="card-body table-responsive p-0" style="height: 430px;">
+      <mat-progress-bar *ngIf = "isSpinner" mode='indeterminate'></mat-progress-bar>
+      <table class="table table-bordered table-head-fixed text-nowrap">
+      
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Total Amouunt</th>
+            <th>Total Paid Amount</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let parent of parents;">
+            <td>{{parent.id}}</td>
+            <td>{{parent.sender}}</td>
+            <td>{{parent.receiver}}</td>
+            <td>{{parent.totalAmount}}</td>
+            <td (click) = loadChildData(parent.id)>{{parent.totalPaidAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+
+    <div class="card-footer clearfix">
+      <ul class="pagination pagination-sm m-0 float-right">
+        <li class="page-item"><a class="page-link" [class.disabled] = "disableBackKey" (click) = pagination(-1)>&laquo;</a></li>
+        <li class="page-item"><a class="page-link" [class.disabled] = "disableKey1" (click) = pagination(0)>1</a></li>
+        <li class="page-item"><a class="page-link" [class.disabled] = "disableKey2" (click) = pagination(1)>2</a></li>
+        <li class="page-item"><a class="page-link" [class.disabled] = "disableKey3" (click) = pagination(2)>3</a></li>
+        <li class="page-item"><a class="page-link" [class.disabled] = "disableNextKey" (click) = pagination(+1)>&raquo;</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
