@@ -7,10 +7,10 @@ import { FetchComponent } from './fetch/fetch.component';
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
-  { path: '', component: FetchComponent,canActivate:[AuthGaurdService] },
-  { path: 'parent', component: ParentComponent,canActivate:[AuthGaurdService]},
+  { path: '', component: FetchComponent, canActivate: [AuthGaurdService] },
+  { path: 'parent', component: ParentComponent, canActivate: [AuthGaurdService] },
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService] },
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService] },
 ];
 
 @NgModule({

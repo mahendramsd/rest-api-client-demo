@@ -15,5 +15,9 @@ label {
 }
 
 button {
-    width: 160px;
+    width: 250px;
+}
+
+.btn-child {
+    margin-left: 10px;
 }

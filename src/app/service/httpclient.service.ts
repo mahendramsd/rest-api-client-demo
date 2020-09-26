@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class HttpClientService {
 
+
   constructor(
     private httpClient: HttpClient,
     private errorMessageUtil: ErrorMessageUtil
@@ -67,10 +68,22 @@ export class HttpClientService {
         environment.endPoinUrl.concat('/parent') + '?page=' + page + '&limit=' + limit).toPromise();
   }
 
+  /**
+   * Error Handler
+   * @param error
+   */
   private errorHandler(error: Response) {
     this.errorMessageUtil.showErrorMessage(error.status);
     return Observable.throw(error || 'Server Error');
 
+  }
+
+  /**
+   * Get Parent by Id
+   * @param parentId
+   */
+  public async getParent(parentId: number): Promise<any> {
+      return this.httpClient.get(environment.endPoinUrl.concat('/parent/get') + '?parentId=' + parentId).toPromise();
   }
 
 }

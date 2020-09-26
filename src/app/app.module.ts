@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHtppInterceptorService } from './service/auth-htpp-interceptor.service';
 import { AuthenticationService } from './service/authentication.service';
@@ -20,6 +19,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { ErrorMessageUtil } from './utils/error-message';
 import { MaterialModule } from './material-module';
 import { MatNativeDateModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatNativeDateModule } from '@angular/material';
     HeaderComponent,
     FooterComponent,
     FetchComponent,
-    ParentComponent
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +48,13 @@ import { MatNativeDateModule } from '@angular/material';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
+    NgbModule
 
   ],
-  providers: [AuthenticationService, AuthGaurdService,ErrorMessageUtil,
+  entryComponents: [
+    ChildComponent,
+  ],
+  providers: [AuthenticationService, AuthGaurdService, ErrorMessageUtil,
     { provide: HTTP_INTERCEPTORS, useClass: AuthHtppInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

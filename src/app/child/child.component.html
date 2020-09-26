@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">Child Details</h4>
+    <button type="button" class="close" data-dismiss="modal" (click)="activeModal.close('Close click')"
+      aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+    <div class="card-body table-responsive p-0" style="height: 430px;">
+      <mat-progress-bar *ngIf = "isSpinner" mode='indeterminate'></mat-progress-bar>
+      <table class="table table-bordered table-head-fixed text-nowrap">
+      
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Total Amouunt</th>
+            <th>Paid Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let child of childs;">
+            <td>{{child.id}}</td>
+            <td>{{child.sender}}</td>
+            <td>{{child.receiver}}</td>
+            <td>{{child.totalAmount}}</td>
+            <td>{{child.paidAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+ 
+
+</div>
